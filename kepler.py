@@ -8,7 +8,7 @@ First_date = datetime.datetime(2024, 10 , 28, 16, 1, 5)
 Second_date = datetime.datetime(2025, 10 , 29, 2, 15, 0)
 a = 9570*1000
 e = 0.1
-U = 3.986*(10**14)
+Ue = 3.986*(10**14)
 
 def delta_time(x, y):
     delta_time = y - x
@@ -29,7 +29,7 @@ def cal_para(E, a, e):
 if __name__ == "__main__":
     t = delta_time(First_date, Second_date)
     while True:
-        E = kepler(a, e, t, U, E_before)
+        E = kepler(a, e, t, Ue, E_before)
         if abs(E - E_before) < 1e-6:
             break
         E_before = E
